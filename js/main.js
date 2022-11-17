@@ -112,6 +112,7 @@ myButton.addEventListener("click",
                         this.classList.add("bomba");
                         gameOver.classList.remove("hidden");
                         gameOver.innerHTML = `Hai perso! il tuo punteggio è di: ${punti}`;
+                        myPunteggio.classList.add("hidden");
                         myPoints.innerHTML = '';
                         myMain.classList.add("hidden");
                         console.clear();
