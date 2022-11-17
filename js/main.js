@@ -21,10 +21,6 @@ let myButton = document.getElementById("mybutton");
 
 let myMain = document.getElementById("mymain");
 
-// 13) Andiamo a creare un array di 100 numeri in ordine Randomici.
-const myArrayNumBomba = genArrayNumUniciRandomMinMax(16, 1, 100);
-console.log(myArrayNumBomba);
-
 //Vado ad aggiungere la classe "hidden" a "myMain". 
 
 myMain.classList.add("hidden");
@@ -43,6 +39,11 @@ myButton.addEventListener("click",
         
         myContainerSquare.innerHTML = '';
         console.clear();
+
+        // 13)Andiamo a creare un array di 100 numeri includendo le 16 Bombe.
+
+        const myArrayNumBomba = genArrayNumUniciRandomMinMax(16, 1, 100);
+        console.log(myArrayNumBomba);
         
         // 1) Andiamo a creare un ciclo "for" da 1 a 100.
 
@@ -103,9 +104,9 @@ function randomNumber(min, max){
     return ( Math.floor(Math.random() * ((max + 1) - min) + min));
 }
 
-function genArrayNumUniciRandomMinMax(howMany, minNum, maxNum){
+// 10) Generiamo un numero Random "min - max".
 
-    // 10) Generiamo un numero Random "min - max".
+function genArrayNumUniciRandomMinMax(howMany, minNum, maxNum){
 
     const newArr = [];
 
