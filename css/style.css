@@ -1,0 +1,73 @@
+/* General Rules */
+.container{
+    width: 80%;
+    height: 100vh;
+    margin: 0 auto;
+    /* DEBUG */
+    /* background-color: blue; */
+}
+
+/* Header Rules */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+    margin: 0 auto;
+    border: 1px solid black;
+    /* DEBUG */
+    background-color: white;
+}
+
+h2{
+    margin-left: 20px;
+}
+
+#mybutton{
+    margin-right: 20px;
+}
+
+/* Main Rules */
+#mymain{
+    width: 100%;
+    height: 90vh;
+    margin: 0 auto;
+    border: 1px solid black;
+    /* DEBUG */
+    background-color: white;
+}
+
+.hidden{
+    display: none;
+}
+
+#container-square{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    height: 70%;
+    margin: 50px auto;
+}
+
+.square{
+    background-color: white;
+    height: 50px;
+    width: calc(10% - 2px);
+    border: 1px solid black;
+}
+
+.square.clicked{
+    background-color: aquamarine;
+}
+
+/* Footer Rules */
+footer{
+    width: 100%;
+    height: 10vh;
+    margin: 0 auto;
+    border: 1px solid black;
+    /* DEBUG */
+    background-color: white;
+}
+
