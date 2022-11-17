@@ -7,6 +7,10 @@
 // La partita termina quando il giocatore clicca su una bomba o quando raggiunge il numero massimo possibile di numeri consentiti (ovvero quando ha rivelato tutte le celle che non sono bombe).
 // Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha cliccato su una cella che non era una bomba.
 
+// Andiamo a creare la variabile per il nostro "punteggio".
+
+let punti = [];
+
 // Andiamo a creare una costante e colleghiamo il nostro "container-square".
 
 const myContainerSquare = document.getElementById("container-square");
@@ -90,9 +94,16 @@ myButton.addEventListener("click",
                         // Aggiungo la classe "bomba".
                         this.classList.add("bomba");
                         let haiPerso = alert("Hai perso!");
+                        myPoints.innerHTML = '';
+                        myMain.classList.add("hidden");
+                        console.clear();
                     }else{
                         // Aggiungo la classe "punti".
                         this.classList.add("punti");
+                        punti ++;
+                        // Andiamo a creare una variabile per il nostro "Nuovo Punteggio".
+                        let nuoviPunti = punti;
+                        myPoints.innerHTML = nuoviPunti;
                     }
 
                     // newElement.classList.toggle("clicked");
