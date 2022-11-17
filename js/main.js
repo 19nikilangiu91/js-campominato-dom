@@ -25,15 +25,35 @@ let myMain = document.getElementById("mymain");
 
 myMain.classList.add("hidden");
 
+// Andiamo a creare una variabile per il nostro punteggio.
+
+let myPunteggio = document.getElementById("mypunteggio");
+
+//Vado ad aggiungere la classe "hidden" a "myMain". 
+
+myPunteggio.classList.add("hidden");
+
+// Andiamo a creare una variabile per il nostro punteggio.
+
+let myPoints = document.getElementById("mypoints");
+
+//Vado ad aggiungere la classe "hidden" a "myMain". 
+
+myPoints.classList.add("hidden");
+
 // Andiamo a settare il nostro bottone.
 
 myButton.addEventListener("click",
 
     function(){
 
-        // Andiamo a rimuovere la classe "hidden" al nostro "main".
+        // Andiamo a rimuovere la classe "hidden" al nostro "main", "punteggio", "punti".
 
         myMain.classList.remove("hidden");
+
+        myPunteggio.classList.remove("hidden");
+
+        myPoints.classList.remove("hidden");
 
         // Andiamo ad inserire "innerHtml" con una stringa "vuota" e la "console.clear" per resettare la "Console" e il "Container" per non generare altre square al click di "play".
         
@@ -52,7 +72,7 @@ myButton.addEventListener("click",
             // 7) Andiamo a creare una variante per collegare la "Funzione".
 
             let newElement = createSquare("div", "square");
-            console.log(newElement);
+            // console.log(newElement);
 
             // 8) Andiamo a creare il "clicked" per le nostre "square".
 
@@ -60,11 +80,16 @@ myButton.addEventListener("click",
 
                 function(){
 
+                    newElement.classList.toggle("clicked");
+
+                    console.log("Hai selezionato la square n. ", i);
+
                     // 14 Andiamo a creare una condizione per le "square" e le "bombe".
 
                     if(myArrayNumBomba.includes(i)){
                         // Aggiungo la classe "bomba".
                         this.classList.add("bomba");
+                        let haiPerso = alert("Hai perso!");
                     }else{
                         // Aggiungo la classe "punti".
                         this.classList.add("punti");
