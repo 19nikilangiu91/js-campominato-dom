@@ -51,6 +51,10 @@ h2{
     display: none;
 }
 
+#gameover{
+    text-align: center;
+}
+
 #container-square{
     display: flex;
     flex-wrap: wrap;
@@ -67,6 +71,7 @@ h2{
     width: calc(10% - 2px);
     border: 1px solid black;
 }
+
 
 .square.clicked{
     background-color: aquamarine;

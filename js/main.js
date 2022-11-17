@@ -45,11 +45,24 @@ let myPoints = document.getElementById("mypoints");
 
 myPoints.classList.add("hidden");
 
+// Andiamo a creare una variabile per il nostro punteggio.
+
+let gameOver = document.getElementById("gameover");
+
+//Vado ad aggiungere la classe "hidden" a "myMain". 
+
+gameOver.classList.add("hidden");
+
 // Andiamo a settare il nostro bottone.
 
 myButton.addEventListener("click",
 
     function(){
+
+        punti = [];
+
+        console.clear();
+        myPoints.innerHTML = '';
 
         // Andiamo a rimuovere la classe "hidden" al nostro "main", "punteggio", "punti".
 
@@ -58,6 +71,7 @@ myButton.addEventListener("click",
         myPunteggio.classList.remove("hidden");
 
         myPoints.classList.remove("hidden");
+
 
         // Andiamo ad inserire "innerHtml" con una stringa "vuota" e la "console.clear" per resettare la "Console" e il "Container" per non generare altre square al click di "play".
         
@@ -68,7 +82,9 @@ myButton.addEventListener("click",
 
         const myArrayNumBomba = genArrayNumUniciRandomMinMax(16, 1, 100);
         console.log(myArrayNumBomba);
-        
+
+        gameOver.classList.add("hidden");
+
         // 1) Andiamo a creare un ciclo "for" da 1 a 100.
 
         for(let i = 1; i <= 100; i++){
@@ -86,6 +102,7 @@ myButton.addEventListener("click",
 
                     newElement.classList.toggle("clicked");
 
+
                     console.log("Hai selezionato la square n. ", i);
 
                     // 14 Andiamo a creare una condizione per le "square" e le "bombe".
@@ -93,10 +110,11 @@ myButton.addEventListener("click",
                     if(myArrayNumBomba.includes(i)){
                         // Aggiungo la classe "bomba".
                         this.classList.add("bomba");
-                        let haiPerso = alert("Hai perso!");
+                        gameOver.classList.remove("hidden");
+                        gameOver.innerHTML = `Hai perso! il tuo punteggio è di: ${punti}`;
                         myPoints.innerHTML = '';
-                        myMain.classList.add("hidden");
                         console.clear();
+                        // myMain.classList.add("hidden");
                     }else{
                         // Aggiungo la classe "punti".
                         this.classList.add("punti");
@@ -105,7 +123,6 @@ myButton.addEventListener("click",
                         let nuoviPunti = punti;
                         myPoints.innerHTML = nuoviPunti;
                     }
-
                     // newElement.classList.toggle("clicked");
 
                     // console.log("Hai selezionato la square n. ", i);
@@ -118,6 +135,7 @@ myButton.addEventListener("click",
             )
 
             myContainerSquare.appendChild(newElement);
+
 
             // 7) Aggiungiamo al nostro "newElement" la scritta "i" che andrà ad inserire i relativi numeri (1,2,3,4,5, etc...).
 
