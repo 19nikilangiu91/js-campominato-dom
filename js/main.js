@@ -21,6 +21,10 @@ let myButton = document.getElementById("mybutton");
 
 let myMain = document.getElementById("mymain");
 
+// 13) Andiamo a creare un array di 100 numeri in ordine Randomici.
+const myArrayNumBomba = genArrayNumUniciRandomMinMax(16, 1, 100);
+console.log(myArrayNumBomba);
+
 //Vado ad aggiungere la classe "hidden" a "myMain". 
 
 myMain.classList.add("hidden");
@@ -44,7 +48,7 @@ myButton.addEventListener("click",
 
         for(let i = 1; i <= 100; i++){
 
-            // 6) Andiamo a creare una variante per collegare la "Funzione".
+            // 7) Andiamo a creare una variante per collegare la "Funzione".
 
             let newElement = createSquare();
 
@@ -58,7 +62,7 @@ myButton.addEventListener("click",
 
                     console.log("Hai selezionato la square n. ", i);
 
-                    // 7) Aggiungiamo al nostro "newElement" la scritta "i" che andrà ad inserire i relativi numeri (1,2,3,4,5, etc...).
+                    // era il n.7) Aggiungiamo al nostro "newElement" la scritta "i" che andrà ad inserire i relativi numeri (1,2,3,4,5, etc...).
 
                     // newElement.innerHTML = (i);
 
@@ -76,7 +80,7 @@ myButton.addEventListener("click",
     }
 )
 
-// 2) Andiamo a creare la nostra "Funzione".
+// 2) Andiamo a creare la nostra "Funzione" per creare i div.
 
 function createSquare() {
 
@@ -92,4 +96,32 @@ function createSquare() {
 
     return myElement
 }
+
+// 9) Andiamo a creare la nostra "Funzione" per generare i numeri random da "1" a "100", includendo i "16" che saranno le nnostre bombe.
+
+function randomNumber(min, max){
+    return ( Math.floor(Math.random() * ((max + 1) - min) + min));
+}
+
+function genArrayNumUniciRandomMinMax(howMany, minNum, maxNum){
+
+    // 10) Generiamo un numero Random "min - max".
+
+    const newArr = [];
+
+    // 11) Generiamo un array di howMany elementi.
+    while (newArr.length < howMany){
+        let newNumber = randomNumber(minNum, maxNum);
+
+        // 12) Andiamo a creare la condizione se i numeri "non sono presenti" di inserirli.
+
+        if(!newArr.includes(newNumber)){
+            newArr.push(newNumber);
+        }
+    }
+
+    return newArr;
+}
+
+
 
