@@ -7,13 +7,14 @@
     /* background-color: blue; */
 }
 
+
 /* Header Rules */
 header{
     display: flex;
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    height: 10vh;
+    height: 10%;
     margin: 0 auto;
     border: 1px solid black;
     /* DEBUG */
@@ -40,7 +41,7 @@ h2{
 /* Main Rules */
 #mymain{
     width: 100%;
-    height: 90vh;
+    height: 90%;
     margin: 0 auto;
     border: 1px solid black;
     /* DEBUG */
@@ -53,13 +54,14 @@ h2{
 
 #gameover{
     text-align: center;
+    margin-right: 15px;
 }
 
 #container-square{
     display: flex;
     flex-wrap: wrap;
     width: 80%;
-    height: 70%;
+    height: 50%;
     margin: 50px auto;
 }
 
@@ -88,8 +90,10 @@ h2{
 
 /* Footer Rules */
 footer{
+    display: flex;
+    justify-content: flex-start;
     width: 100%;
-    height: 10vh;
+    height: 10%;
     margin: 0 auto;
     border: 1px solid black;
     /* DEBUG */

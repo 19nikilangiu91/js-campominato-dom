@@ -113,8 +113,8 @@ myButton.addEventListener("click",
                         gameOver.classList.remove("hidden");
                         gameOver.innerHTML = `Hai perso! il tuo punteggio è di: ${punti}`;
                         myPoints.innerHTML = '';
+                        myMain.classList.add("hidden");
                         console.clear();
-                        // myMain.classList.add("hidden");
                     }else{
                         // Aggiungo la classe "punti".
                         this.classList.add("punti");
