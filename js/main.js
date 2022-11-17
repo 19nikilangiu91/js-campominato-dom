@@ -51,7 +51,8 @@ myButton.addEventListener("click",
 
             // 7) Andiamo a creare una variante per collegare la "Funzione".
 
-            let newElement = createSquare();
+            let newElement = createSquare("div", "square");
+            console.log(newElement);
 
             // 8) Andiamo a creare il "clicked" per le nostre "square".
 
@@ -59,13 +60,23 @@ myButton.addEventListener("click",
 
                 function(){
 
-                    newElement.classList.toggle("clicked");
+                    // 14 Andiamo a creare una condizione per le "square" e le "bombe".
 
-                    console.log("Hai selezionato la square n. ", i);
+                    if(myArrayNumBomba.includes(i)){
+                        // Aggiungo la classe "bomba".
+                        this.classList.add("bomba");
+                    }else{
+                        // Aggiungo la classe "punti".
+                        this.classList.add("punti");
+                    }
+
+                    // newElement.classList.toggle("clicked");
+
+                    // console.log("Hai selezionato la square n. ", i);
 
                     // era il n.7) Aggiungiamo al nostro "newElement" la scritta "i" che andrà ad inserire i relativi numeri (1,2,3,4,5, etc...).
 
-                    // newElement.innerHTML = (i);
+                    newElement.innerHTML = (i);
 
                 }, {once : true}
             )

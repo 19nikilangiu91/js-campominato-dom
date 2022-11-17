@@ -51,6 +51,8 @@ h2{
 }
 
 .square{
+    font-size: 20px;
+    color: white;
     background-color: white;
     height: 50px;
     width: calc(10% - 2px);
@@ -61,7 +63,7 @@ h2{
     background-color: aquamarine;
 }
 
-.square.right{
+.square.punti{
     background-color: blue;
 }
 
